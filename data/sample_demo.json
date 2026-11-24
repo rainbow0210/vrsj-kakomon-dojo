@@ -1,6 +1,6 @@
 {
   "examId": "vrsj-demo-sample",
-  "title": "動作確認用サンプル（通常＋マークシート）",
+  "title": "動作確認用サンプル（通常＋図付きマークシート）",
   "course": "application",
   "year": 2025,
   "questions": [
@@ -22,8 +22,15 @@
     {
       "id": "vrsj-demo-sample-02",
       "number": 2,
-      "category": "マークシート形式サンプル（図表・PDF併読）",
+      "category": "図表・マークシート形式サンプル",
       "question": "",
+      "images": [
+        {
+          "src": "data/images/demo_marksheet_fig.svg",
+          "alt": "HMDの3次元座標軸と回転（ピッチ・ヨー・ロール）の概念図",
+          "caption": "図1：HMDの座標軸と回転3軸（タップで拡大表示できます）"
+        }
+      ],
       "choices": [
         { "label": "ア", "text": "" },
         { "label": "イ", "text": "" },
@@ -31,7 +38,7 @@
         { "label": "エ", "text": "" }
       ],
       "answer": "ウ",
-      "explanation": "これはマークシート／PDF併読モードの動作確認用サンプル問題です。問題文が空文字（\"\"）の問題では、元PDFを見ながら大きな解答記号ボタンをタップして正誤判定と学習履歴の記録ができます。このサンプルの正解は「ウ」に設定されています。（※AIによる補足）",
+      "explanation": "これは図表読み込み＆マークシート形式の動作確認用サンプル問題です。図1の通り、視線方向（Z軸）まわりの傾き回転は「ロール（Roll）」であり、正解は「ウ」です。問題JSONに images 配列を指定するか、問題IDと同名の画像ファイル（例: vrsj-demo-sample-02.png）を読み込む・画面へ直接貼り付ける（Ctrl+V）ことで図表を表示できます。（※AIによる補足）",
       "hasFigure": true
     }
   ]

@@ -1658,11 +1658,291 @@
       text-align: right;
       font-variant-numeric: tabular-nums;
     }
+
+    /* ===== Figure / Diagram Support ===== */
+    .figure-banner-content {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .figure-banner-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 8px;
+    }
+
+    .q-figures-area {
+      margin: 0 0 18px;
+    }
+
+    .figure-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 12px;
+    }
+
+    .figure-grid.is-multi {
+      grid-template-columns: 1fr;
+    }
+
+    @media (min-width: 600px) {
+      .figure-grid.is-multi {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    .figure-card {
+      margin: 0;
+      border: 1px solid var(--border-strong);
+      border-radius: var(--radius-md);
+      background: var(--surface-subtle);
+      overflow: hidden;
+    }
+
+    .figure-frame {
+      position: relative;
+      background: #ffffff;
+      padding: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: zoom-in;
+      min-height: 110px;
+    }
+
+    .figure-frame img {
+      display: block;
+      max-width: 100%;
+      max-height: 380px;
+      width: auto;
+      height: auto;
+      object-fit: contain;
+      border-radius: 6px;
+    }
+
+    .figure-zoom-badge {
+      position: absolute;
+      right: 8px;
+      bottom: 8px;
+      padding: 3px 8px;
+      border-radius: 999px;
+      background: rgba(15, 23, 42, 0.72);
+      color: #ffffff;
+      font-size: 0.72rem;
+      font-weight: 700;
+      pointer-events: none;
+    }
+
+    .figure-caption-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      padding: 8px 11px;
+      border-top: 1px solid var(--border);
+      font-size: 0.8rem;
+      color: var(--text-secondary);
+    }
+
+    .figure-caption-text {
+      min-width: 0;
+      word-break: break-word;
+    }
+
+    .figure-missing-box {
+      padding: 16px 14px;
+      text-align: center;
+      background: var(--warning-bg);
+      color: var(--warning);
+      font-size: 0.84rem;
+    }
+
+    .figure-missing-box p {
+      margin: 0 0 10px;
+      font-weight: 700;
+      word-break: break-all;
+    }
+
+    .figure-attach-row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      margin-top: 10px;
+      padding-top: 8px;
+      border-top: 1px dashed var(--border);
+      font-size: 0.78rem;
+      color: var(--text-muted);
+    }
+
+    /* Choice Images */
+    .choice-content {
+      flex: 1;
+      min-width: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .choice-images-wrap {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .choice-thumb-wrap {
+      position: relative;
+      display: inline-flex;
+      background: #ffffff;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 4px;
+      max-width: 100%;
+    }
+
+    .choice-thumb-wrap img {
+      display: block;
+      max-width: 100%;
+      max-height: 150px;
+      object-fit: contain;
+      border-radius: 4px;
+    }
+
+    .choice-zoom-trigger {
+      position: absolute;
+      right: 6px;
+      bottom: 6px;
+      padding: 2px 7px;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.35);
+      background: rgba(15, 23, 42, 0.76);
+      color: #ffffff;
+      font-size: 0.7rem;
+      font-weight: 700;
+      cursor: zoom-in;
+    }
+
+    .explanation-figures {
+      margin-top: 12px;
+    }
+
+    /* Image Lightbox Modal */
+    .lightbox-backdrop {
+      position: fixed;
+      inset: 0;
+      z-index: 98;
+      background: rgba(2, 6, 23, 0.88);
+      backdrop-filter: blur(4px);
+      display: flex;
+      flex-direction: column;
+      padding: 12px;
+    }
+
+    .lightbox-toolbar {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      padding: 8px 12px;
+      border-radius: var(--radius-md);
+      background: rgba(15, 23, 42, 0.92);
+      border: 1px solid rgba(148, 163, 184, 0.28);
+      color: #f8fafc;
+      margin-bottom: 10px;
+    }
+
+    .lightbox-caption {
+      font-size: 0.86rem;
+      font-weight: 700;
+      min-width: 0;
+      flex: 1;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .lightbox-controls {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .lightbox-btn {
+      min-height: 36px;
+      padding: 5px 11px;
+      border-radius: var(--radius-sm);
+      border: 1px solid rgba(148, 163, 184, 0.35);
+      background: rgba(30, 41, 59, 0.9);
+      color: #f8fafc;
+      font-size: 0.8rem;
+      font-weight: 700;
+    }
+
+    .lightbox-btn:hover:not(:disabled) {
+      background: rgba(51, 65, 85, 0.95);
+    }
+
+    .lightbox-btn:disabled {
+      opacity: 0.4;
+      cursor: not-allowed;
+    }
+
+    .lightbox-stage {
+      flex: 1;
+      min-height: 0;
+      overflow: auto;
+      display: grid;
+      place-items: center;
+      border-radius: var(--radius-md);
+      background: #ffffff;
+      padding: 16px;
+    }
+
+    .lightbox-stage.is-dark-bg {
+      background: #0f172a;
+    }
+
+    .lightbox-img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+      cursor: zoom-in;
+      transition: transform 0.15s ease;
+    }
+
+    .lightbox-img.is-zoomed {
+      max-width: none;
+      max-height: none;
+      width: auto;
+      height: auto;
+      min-width: 150%;
+      cursor: zoom-out;
+    }
+
+    .assets-summary-bar {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      padding: 12px 13px;
+      border-radius: var(--radius-md);
+      background: var(--surface-subtle);
+      border: 1px solid var(--border);
+      font-size: 0.84rem;
+    }
   </style>
 </head>
 <body>
   <!-- Hidden File Inputs -->
-  <input type="file" id="examFileInput" multiple accept=".json,application/json" class="sr-only" aria-label="問題JSONファイルを選択">
+  <input type="file" id="examFileInput" multiple accept=".json,application/json,image/*" class="sr-only" aria-label="問題JSONや画像ファイルを選択">
+  <input type="file" id="folderFileInput" webkitdirectory multiple class="sr-only" aria-label="問題JSONと画像を含むフォルダを選択">
+  <input type="file" id="imageAssetsInput" multiple accept="image/*" class="sr-only" aria-label="図表画像ファイルを選択">
+  <input type="file" id="singleQuestionImageInput" multiple accept="image/*" class="sr-only" aria-label="現在の問題に図表画像を添付">
   <input type="file" id="historyFileInput" accept=".json,application/json" class="sr-only" aria-label="学習履歴JSONファイルを選択">
 
   <!-- Global Drag & Drop Overlay -->
@@ -1671,8 +1951,8 @@
       <div class="dropzone-icon" style="width:60px;height:60px;">
         <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
       </div>
-      <h3>JSONファイルをドロップして読み込み</h3>
-      <p>複数の問題データJSON（または学習履歴JSON）をまとめて読み込めます</p>
+      <h3>JSON・画像・フォルダをドロップ</h3>
+      <p>問題JSON・図表画像（PNG/JPG/WebP/SVG）・フォルダごとまとめて読み込めます</p>
     </div>
   </div>
 
@@ -1753,19 +2033,24 @@
           <div class="dropzone-icon" aria-hidden="true">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
           </div>
-          <p class="dropzone-title">問題JSONファイルをドラッグ＆ドロップ</p>
-          <p class="dropzone-sub">複数ファイルを同時に選択・読み込みできます（examIdで自動整理）</p>
-          <button type="button" class="btn btn-primary" data-action="pick-exam-files">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="12" y1="18" x2="12" y2="12"/><line x1="9" y1="15" x2="15" y2="15"/></svg>
-            問題JSONファイルを選択（複数可）
-          </button>
+          <p class="dropzone-title">問題JSON・画像・フォルダをドラッグ＆ドロップ</p>
+          <p class="dropzone-sub">問題JSONと図表画像（PNG/JPG/WebP/SVG）をまとめて読み込めます</p>
+          <div class="btn-row" style="justify-content:center;">
+            <button type="button" class="btn btn-primary" data-action="pick-exam-files">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="12" y1="18" x2="12" y2="12"/><line x1="9" y1="15" x2="15" y2="15"/></svg>
+              JSON・画像を選択（複数可）
+            </button>
+            <button type="button" class="btn" data-action="pick-folder">
+              フォルダごと読込
+            </button>
+          </div>
         </div>
 
         <div class="demo-divider">または、まずは動作を確認する</div>
 
         <button type="button" class="btn btn-soft btn-block" data-action="load-demo">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"/></svg>
-          デモ問題を1クリックで試す（通常1問＋マークシート1問）
+          デモ問題を1クリックで試す（通常1問＋図付きマークシート1問）
         </button>
       </div>
 
@@ -1802,15 +2087,27 @@
 
           <div id="figureBanner" class="figure-banner hidden">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
-            <span>図表を含む問題です：元の試験問題PDFを参照してください</span>
+            <div class="figure-banner-content">
+              <div>図表を含む問題です：元PDFを参照するか、図表画像を読み込んで表示できます</div>
+              <div class="figure-banner-actions">
+                <button type="button" class="btn btn-sm" data-action="attach-question-image">この問題に図を添付</button>
+                <span style="font-size:0.76rem; align-self:center; opacity:0.9;">※スクショを Ctrl+V で直接貼り付けも可</span>
+              </div>
+            </div>
           </div>
 
           <div id="questionPromptArea"></div>
+          <div id="questionFiguresArea" class="q-figures-area hidden"></div>
           <div id="choicesArea"></div>
           <div id="resultArea" class="hidden"></div>
 
+          <div class="figure-attach-row">
+            <span>図表の追加：スクショを <kbd>Ctrl</kbd>+<kbd>V</kbd> で貼付、または画像ファイルを選択</span>
+            <button type="button" class="btn btn-sm" data-action="attach-question-image">+ 図を添付</button>
+          </div>
+
           <div class="kbd-hint">
-            PCショートカット: <kbd>1</kbd>〜<kbd>9</kbd> 選択肢を選ぶ ／ <kbd>→</kbd>・<kbd>Enter</kbd> 次の問題 ／ <kbd>←</kbd> 前の問題 ／ <kbd>B</kbd> ブックマーク
+            PCショートカット: <kbd>1</kbd>〜<kbd>9</kbd> 選択肢を選ぶ ／ <kbd>→</kbd>・<kbd>Enter</kbd> 次の問題 ／ <kbd>←</kbd> 前の問題 ／ <kbd>B</kbd> ブックマーク ／ <kbd>Ctrl+V</kbd> 図表画像を貼付
           </div>
         </article>
 
@@ -1897,17 +2194,18 @@
     <!-- ===== TAB 3: DATA & HISTORY ===== -->
     <section id="viewData" class="hidden" role="tabpanel" aria-labelledby="tabData">
       <div class="card">
-        <h2 class="section-title">問題データJSONの読み込み（年度追加対応）</h2>
-        <p class="section-desc">開催回ごとの問題JSONを複数まとめて追加できます。同じ <code>examId</code> を読み込むと最新データで上書き更新されます。</p>
+        <h2 class="section-title">問題データJSON・図表画像の読み込み（年度追加対応）</h2>
+        <p class="section-desc">開催回ごとの問題JSONと図表画像（PNG/JPG/WebP/SVG）をまとめて追加できます。問題JSONの <code>images</code> で指定したパス、または <code>問題ID.png</code> 等のファイル名で自動紐付けされます。</p>
 
         <div id="dataDropzone" class="dropzone" style="margin-bottom:14px;">
           <div class="dropzone-icon" aria-hidden="true">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
           </div>
-          <p class="dropzone-title">ここに問題JSONをドロップ（画面全体どこでも可）</p>
-          <p class="dropzone-sub">ローカル直開き（file://）でもそのまま動作します</p>
+          <p class="dropzone-title">ここに問題JSON・画像・フォルダをドロップ（画面全体どこでも可）</p>
+          <p class="dropzone-sub">ローカル直開き（file://）でもJSONと図表を一緒に読み込めます</p>
           <div class="btn-row" style="justify-content:center;">
-            <button type="button" class="btn btn-primary" data-action="pick-exam-files">問題JSONを選択（複数可）</button>
+            <button type="button" class="btn btn-primary" data-action="pick-exam-files">JSON・画像を選択（複数可）</button>
+            <button type="button" class="btn" data-action="pick-folder">フォルダごと読込</button>
             <button type="button" class="btn btn-soft" data-action="load-demo">デモ問題を読み込む（2問）</button>
           </div>
         </div>
@@ -1919,6 +2217,15 @@
 
         <h3 style="margin:14px 0 8px; font-size:0.9rem; color:var(--text-secondary);">読み込み済みの試験一覧</h3>
         <div id="loadedExamsList"></div>
+
+        <h3 style="margin:18px 0 8px; font-size:0.9rem; color:var(--text-secondary);">ローカル図表画像アセット（IndexedDB保存）</h3>
+        <div class="assets-summary-bar">
+          <div id="assetsSummaryText">読込済みのローカル画像: 0件</div>
+          <div class="btn-row">
+            <button type="button" class="btn btn-sm" data-action="pick-image-assets">画像ファイルを追加</button>
+            <button type="button" id="clearAssetsBtn" class="btn btn-sm btn-danger">保存画像をクリア</button>
+          </div>
+        </div>
       </div>
 
       <div class="card">
@@ -2035,6 +2342,23 @@
     </div>
   </div>
 
+  <!-- Modal 4: Image Lightbox -->
+  <div id="imageLightboxModal" class="lightbox-backdrop hidden" role="dialog" aria-modal="true" aria-labelledby="lightboxCaption">
+    <div class="lightbox-toolbar">
+      <div id="lightboxCaption" class="lightbox-caption">図表プレビュー</div>
+      <div class="lightbox-controls">
+        <button type="button" id="lightboxPrevBtn" class="lightbox-btn">← 前</button>
+        <button type="button" id="lightboxNextBtn" class="lightbox-btn">次 →</button>
+        <button type="button" id="lightboxZoomBtn" class="lightbox-btn">拡大 200%</button>
+        <button type="button" id="lightboxBgBtn" class="lightbox-btn">背景: 白</button>
+        <button type="button" id="lightboxCloseBtn" class="lightbox-btn" aria-label="閉じる">✕ 閉じる</button>
+      </div>
+    </div>
+    <div id="lightboxStage" class="lightbox-stage">
+      <img id="lightboxImg" class="lightbox-img" src="" alt="拡大図表">
+    </div>
+  </div>
+
   <!-- Toast Notification Container -->
   <div id="toastContainer" class="toast-container" aria-live="polite"></div>
 
@@ -2051,9 +2375,56 @@
         PREFS: 'vrsj_kakomon_prefs_v1'
       };
 
+      const DEMO_FIGURE_SVG = [
+        '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 340" width="640" height="340">',
+        '<rect width="640" height="340" fill="#ffffff"/>',
+        '<rect x="12" y="12" width="616" height="316" rx="12" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.5"/>',
+        '<text x="32" y="42" font-family="sans-serif" font-size="15" font-weight="700" fill="#0f172a">サンプル図（第2問）：HMDの3次元座標軸と回転の概念図</text>',
+        '<text x="32" y="62" font-family="sans-serif" font-size="12" fill="#475569">図表を含む問題では画像を表示し、タップ／クリックで拡大確認できます</text>',
+        '<line x1="310" y1="295" x2="310" y2="95" stroke="#0284c7" stroke-width="2.5"/>',
+        '<polygon points="310,85 304,98 316,98" fill="#0284c7"/>',
+        '<text x="320" y="96" font-family="sans-serif" font-size="13" font-weight="700" fill="#0369a1">Y軸（上下）</text>',
+        '<line x1="165" y1="195" x2="465" y2="195" stroke="#059669" stroke-width="2.5"/>',
+        '<polygon points="475,195 462,189 462,201" fill="#059669"/>',
+        '<text x="480" y="200" font-family="sans-serif" font-size="13" font-weight="700" fill="#047857">X軸（左右）</text>',
+        '<line x1="400" y1="125" x2="210" y2="268" stroke="#7c3aed" stroke-width="2.5"/>',
+        '<polygon points="200,275 215,272 208,261" fill="#7c3aed"/>',
+        '<text x="112" y="290" font-family="sans-serif" font-size="13" font-weight="700" fill="#6d28d9">Z軸（前後・視線方向）</text>',
+        '<g transform="translate(262,165)">',
+        '<rect x="0" y="0" width="96" height="58" rx="14" fill="#4338ca" stroke="#312e81" stroke-width="2"/>',
+        '<rect x="12" y="13" width="30" height="24" rx="6" fill="#e0e7ff"/>',
+        '<rect x="54" y="13" width="30" height="24" rx="6" fill="#e0e7ff"/>',
+        '<path d="M36 58 L44 46 Q48 42 52 46 L60 58" fill="#f8fafc"/>',
+        '<text x="48" y="30" text-anchor="middle" font-family="sans-serif" font-size="10" font-weight="700" fill="#312e81">HMD</text>',
+        '</g>',
+        '<path d="M415 170 A22 32 0 1 1 415 220" fill="none" stroke="#059669" stroke-width="2.2" stroke-dasharray="4 3"/>',
+        '<polygon points="415,224 410,214 421,215" fill="#059669"/>',
+        '<g transform="translate(458,128)"><rect width="144" height="36" rx="8" fill="#ecfdf5" stroke="#6ee7b7" stroke-width="1.5"/>',
+        '<circle cx="18" cy="18" r="11" fill="#059669"/><text x="18" y="22" text-anchor="middle" font-family="sans-serif" font-size="12" font-weight="700" fill="#ffffff">ア</text>',
+        '<text x="36" y="23" font-family="sans-serif" font-size="12" font-weight="700" fill="#065f46">ピッチ（Pitch）</text></g>',
+        '<path d="M278 125 A36 14 0 1 1 342 125" fill="none" stroke="#0284c7" stroke-width="2.2" stroke-dasharray="4 3"/>',
+        '<polygon points="346,125 336,120 338,131" fill="#0284c7"/>',
+        '<g transform="translate(36,98)"><rect width="144" height="36" rx="8" fill="#e0f2fe" stroke="#7dd3fc" stroke-width="1.5"/>',
+        '<circle cx="18" cy="18" r="11" fill="#0284c7"/><text x="18" y="22" text-anchor="middle" font-family="sans-serif" font-size="12" font-weight="700" fill="#ffffff">イ</text>',
+        '<text x="36" y="23" font-family="sans-serif" font-size="12" font-weight="700" fill="#075985">ヨー（Yaw）</text></g>',
+        '<path d="M225 225 A26 26 0 1 0 264 252" fill="none" stroke="#7c3aed" stroke-width="2.5"/>',
+        '<polygon points="268,250 257,248 262,258" fill="#7c3aed"/>',
+        '<g transform="translate(36,178)"><rect width="154" height="44" rx="8" fill="#f3e8ff" stroke="#a855f7" stroke-width="2"/>',
+        '<circle cx="20" cy="22" r="12" fill="#7c3aed"/><text x="20" y="26" text-anchor="middle" font-family="sans-serif" font-size="13" font-weight="700" fill="#ffffff">ウ</text>',
+        '<text x="40" y="20" font-family="sans-serif" font-size="12" font-weight="700" fill="#581c87">ロール（Roll）</text>',
+        '<text x="40" y="36" font-family="sans-serif" font-size="10.5" fill="#6b21a8">Z軸まわりの傾き</text></g>',
+        '<g transform="translate(432,246)"><rect width="170" height="36" rx="8" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1.5"/>',
+        '<circle cx="18" cy="18" r="11" fill="#475569"/><text x="18" y="22" text-anchor="middle" font-family="sans-serif" font-size="12" font-weight="700" fill="#ffffff">エ</text>',
+        '<text x="36" y="23" font-family="sans-serif" font-size="12" font-weight="700" fill="#334155">並進移動（3軸）</text></g>',
+        '<text x="32" y="316" font-family="sans-serif" font-size="11" fill="#64748b">※ マークシート＋図表デモ：Z軸（視線方向）まわりの回転に該当する記号は「ウ」</text>',
+        '</svg>'
+      ].join('');
+
+      const DEMO_FIGURE_DATA_URL = 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(DEMO_FIGURE_SVG);
+
       const DEMO_EXAM_DATA = {
         examId: 'vrsj-demo-sample',
-        title: '動作確認用サンプル（通常＋マークシート）',
+        title: '動作確認用サンプル（通常＋図付きマークシート）',
         course: 'application',
         year: 2025,
         questions: [
@@ -2075,8 +2446,15 @@
           {
             id: 'vrsj-demo-sample-02',
             number: 2,
-            category: 'マークシート形式サンプル（図表・PDF併読）',
+            category: '図表・マークシート形式サンプル',
             question: '',
+            images: [
+              {
+                src: DEMO_FIGURE_DATA_URL,
+                alt: 'HMDの3次元座標軸と回転（ピッチ・ヨー・ロール）の概念図',
+                caption: '図1：HMDの座標軸と回転3軸（タップで拡大表示できます）'
+              }
+            ],
             choices: [
               { label: 'ア', text: '' },
               { label: 'イ', text: '' },
@@ -2084,7 +2462,7 @@
               { label: 'エ', text: '' }
             ],
             answer: 'ウ',
-            explanation: 'これはマークシート／PDF併読モードの動作確認用サンプル問題です。問題文が空文字（""）の問題では、元PDFを見ながら大きな解答記号ボタンをタップして正誤判定と学習履歴の記録ができます。このサンプルの正解は「ウ」に設定されています。（※AIによる補足）',
+            explanation: 'これは図表読み込み＆マークシート形式の動作確認用サンプル問題です。図1の通り、視線方向（Z軸）まわりの傾き回転は「ロール（Roll）」であり、正解は「ウ」です。問題JSONの images 配列や問題IDと同名の画像ファイル読み込み、画面への直接貼り付け（Ctrl+V）で図表を表示できます。（※AIによる補足）',
             hasFigure: true
           }
         ]
@@ -2119,6 +2497,18 @@
         pendingImportData: null,        // parsed history JSON waiting in Import Modal
         theme: 'light',
 
+        // Image / Figure assets (synced with IndexedDB when available)
+        fileAssetsByPath: new Map(),    // normalized relPath -> asset record
+        fileAssetsByName: new Map(),    // lowercase basename -> asset record
+        questionAssetsByQId: new Map(), // questionId -> array of attached asset records
+        lightbox: {
+          items: [],
+          index: 0,
+          zoomed: false,
+          darkBg: false
+        },
+        activeLightboxGroup: [],
+
         // Optional 60-minute study timer
         timerSecondsLeft: 60 * 60,
         timerRunning: false,
@@ -2130,6 +2520,9 @@
          ===================================================================== */
       const dom = {
         examFileInput: document.getElementById('examFileInput'),
+        folderFileInput: document.getElementById('folderFileInput'),
+        imageAssetsInput: document.getElementById('imageAssetsInput'),
+        singleQuestionImageInput: document.getElementById('singleQuestionImageInput'),
         historyFileInput: document.getElementById('historyFileInput'),
         globalDropOverlay: document.getElementById('globalDropOverlay'),
 
@@ -2171,6 +2564,7 @@
         questionMeta: document.getElementById('questionMeta'),
         figureBanner: document.getElementById('figureBanner'),
         questionPromptArea: document.getElementById('questionPromptArea'),
+        questionFiguresArea: document.getElementById('questionFiguresArea'),
         choicesArea: document.getElementById('choicesArea'),
         resultArea: document.getElementById('resultArea'),
 
@@ -2210,6 +2604,8 @@
         manifestStatusText: document.getElementById('manifestStatusText'),
         reloadManifestBtn: document.getElementById('reloadManifestBtn'),
         loadedExamsList: document.getElementById('loadedExamsList'),
+        assetsSummaryText: document.getElementById('assetsSummaryText'),
+        clearAssetsBtn: document.getElementById('clearAssetsBtn'),
 
         histTotalProblems: document.getElementById('histTotalProblems'),
         histTotalAttempts: document.getElementById('histTotalAttempts'),
@@ -2228,6 +2624,16 @@
         resetModal: document.getElementById('resetModal'),
         resetModalText: document.getElementById('resetModalText'),
         confirmResetBtn: document.getElementById('confirmResetBtn'),
+
+        imageLightboxModal: document.getElementById('imageLightboxModal'),
+        lightboxCaption: document.getElementById('lightboxCaption'),
+        lightboxPrevBtn: document.getElementById('lightboxPrevBtn'),
+        lightboxNextBtn: document.getElementById('lightboxNextBtn'),
+        lightboxZoomBtn: document.getElementById('lightboxZoomBtn'),
+        lightboxBgBtn: document.getElementById('lightboxBgBtn'),
+        lightboxCloseBtn: document.getElementById('lightboxCloseBtn'),
+        lightboxStage: document.getElementById('lightboxStage'),
+        lightboxImg: document.getElementById('lightboxImg'),
 
         toastContainer: document.getElementById('toastContainer')
       };
@@ -2345,7 +2751,8 @@
             course: exam.course,
             year: exam.year,
             questions: exam.questions,
-            _source: exam._source || 'manual'
+            _source: exam._source || 'manual',
+            _baseDir: exam._baseDir || ''
           }));
           localStorage.setItem(STORAGE_KEYS.EXAMS_CACHE, JSON.stringify(list));
         } catch (err) {
@@ -2386,8 +2793,370 @@
       }
 
       /* =====================================================================
+         Image Asset Persistence (IndexedDB + In-Memory Fallback) & Resolution
+         ===================================================================== */
+      const ASSET_DB_NAME = 'vrsj_kakomon_assets_v1';
+      const ASSET_STORE_NAME = 'assets';
+      const IMAGE_EXT_RE = /\.(png|jpe?g|webp|gif|svg|bmp|avif)$/i;
+
+      function normalizeAssetPath(rawPath) {
+        return String(rawPath || '')
+          .trim()
+          .replace(/\\/g, '/')
+          .replace(/^\.\/+/, '')
+          .replace(/^\/+/, '');
+      }
+
+      function getBaseName(rawPath) {
+        const clean = normalizeAssetPath(rawPath).split(/[?#]/)[0];
+        const parts = clean.split('/');
+        return parts[parts.length - 1] || '';
+      }
+
+      function stripExtension(fileName) {
+        return String(fileName || '').replace(/\.[^.]+$/, '');
+      }
+
+      function isImageFile(file) {
+        if (!file) return false;
+        if (file.type && file.type.startsWith('image/')) return true;
+        return IMAGE_EXT_RE.test(file.name || '');
+      }
+
+      function isJsonFile(file) {
+        if (!file) return false;
+        if (file.type === 'application/json') return true;
+        return /\.json$/i.test(file.name || '');
+      }
+
+      function readFileAsDataUrl(file) {
+        return new Promise((resolve, reject) => {
+          const reader = new FileReader();
+          reader.onload = () => resolve(String(reader.result || ''));
+          reader.onerror = () => reject(new Error('画像ファイルの読み込みに失敗しました'));
+          reader.readAsDataURL(file);
+        });
+      }
+
+      const AssetStore = {
+        dbPromise: null,
+        open() {
+          if (this.dbPromise) return this.dbPromise;
+          this.dbPromise = new Promise((resolve) => {
+            try {
+              if (!window.indexedDB) {
+                resolve(null);
+                return;
+              }
+              const req = window.indexedDB.open(ASSET_DB_NAME, 1);
+              req.onupgradeneeded = () => {
+                const db = req.result;
+                if (!db.objectStoreNames.contains(ASSET_STORE_NAME)) {
+                  db.createObjectStore(ASSET_STORE_NAME, { keyPath: 'key' });
+                }
+              };
+              req.onsuccess = () => resolve(req.result);
+              req.onerror = () => resolve(null);
+            } catch (err) {
+              resolve(null);
+            }
+          });
+          return this.dbPromise;
+        },
+        async loadAll() {
+          const db = await this.open();
+          if (!db) return [];
+          return new Promise((resolve) => {
+            try {
+              const tx = db.transaction(ASSET_STORE_NAME, 'readonly');
+              const store = tx.objectStore(ASSET_STORE_NAME);
+              const req = store.getAll();
+              req.onsuccess = () => resolve(Array.isArray(req.result) ? req.result : []);
+              req.onerror = () => resolve([]);
+            } catch (err) {
+              resolve([]);
+            }
+          });
+        },
+        async put(record) {
+          const db = await this.open();
+          if (!db) return false;
+          return new Promise((resolve) => {
+            try {
+              const tx = db.transaction(ASSET_STORE_NAME, 'readwrite');
+              tx.objectStore(ASSET_STORE_NAME).put(record);
+              tx.oncomplete = () => resolve(true);
+              tx.onerror = () => resolve(false);
+            } catch (err) {
+              resolve(false);
+            }
+          });
+        },
+        async remove(key) {
+          const db = await this.open();
+          if (!db) return false;
+          return new Promise((resolve) => {
+            try {
+              const tx = db.transaction(ASSET_STORE_NAME, 'readwrite');
+              tx.objectStore(ASSET_STORE_NAME).delete(key);
+              tx.oncomplete = () => resolve(true);
+              tx.onerror = () => resolve(false);
+            } catch (err) {
+              resolve(false);
+            }
+          });
+        },
+        async clearAll() {
+          const db = await this.open();
+          if (!db) return false;
+          return new Promise((resolve) => {
+            try {
+              const tx = db.transaction(ASSET_STORE_NAME, 'readwrite');
+              tx.objectStore(ASSET_STORE_NAME).clear();
+              tx.oncomplete = () => resolve(true);
+              tx.onerror = () => resolve(false);
+            } catch (err) {
+              resolve(false);
+            }
+          });
+        }
+      };
+
+      function indexAssetInMemory(record) {
+        if (!record || !record.key || !record.dataUrl) return;
+        if (record.type === 'file') {
+          const normPath = normalizeAssetPath(record.relPath || record.fileName);
+          const lowerPath = normPath.toLowerCase();
+          const lowerName = getBaseName(record.fileName || normPath).toLowerCase();
+          state.fileAssetsByPath.set(lowerPath, record);
+          if (lowerName) state.fileAssetsByName.set(lowerName, record);
+        } else if (record.type === 'question' && record.questionId) {
+          const list = state.questionAssetsByQId.get(record.questionId) || [];
+          const filtered = list.filter((item) => item.key !== record.key);
+          filtered.push(record);
+          filtered.sort((a, b) => (a.createdAt || '').localeCompare(b.createdAt || ''));
+          state.questionAssetsByQId.set(record.questionId, filtered);
+        }
+      }
+
+      async function saveFileAsset(file, relPath = '') {
+        const dataUrl = await readFileAsDataUrl(file);
+        const cleanRel = normalizeAssetPath(relPath || file.webkitRelativePath || file.name);
+        const fileName = getBaseName(cleanRel) || file.name;
+        const record = {
+          key: 'file:' + cleanRel.toLowerCase(),
+          type: 'file',
+          relPath: cleanRel,
+          fileName,
+          mimeType: file.type || '',
+          size: file.size || dataUrl.length,
+          dataUrl,
+          updatedAt: toLocalISOString()
+        };
+        indexAssetInMemory(record);
+        await AssetStore.put(record);
+        return record;
+      }
+
+      async function saveQuestionAttachment(questionId, file, caption = '') {
+        const dataUrl = await readFileAsDataUrl(file);
+        const ts = Date.now();
+        const rand = Math.random().toString(36).slice(2, 7);
+        const fileName = file.name || `figure_${ts}.png`;
+        const record = {
+          key: `q:${questionId}:${ts}_${rand}`,
+          type: 'question',
+          questionId,
+          fileName,
+          caption: caption || fileName,
+          mimeType: file.type || '',
+          size: file.size || dataUrl.length,
+          dataUrl,
+          createdAt: toLocalISOString()
+        };
+        indexAssetInMemory(record);
+        await AssetStore.put(record);
+        return record;
+      }
+
+      async function removeQuestionAttachment(questionId, assetKey) {
+        const list = state.questionAssetsByQId.get(questionId) || [];
+        const next = list.filter((item) => item.key !== assetKey);
+        if (next.length > 0) state.questionAssetsByQId.set(questionId, next);
+        else state.questionAssetsByQId.delete(questionId);
+        await AssetStore.remove(assetKey);
+        renderAll();
+        showToast('添付画像を削除しました', 'info', 2000);
+      }
+
+      async function clearAllSavedAssets() {
+        const total = getTotalSavedAssetsCount();
+        if (total === 0) {
+          showToast('保存されているローカル画像はありません', 'info', 2000);
+          return;
+        }
+        state.fileAssetsByPath.clear();
+        state.fileAssetsByName.clear();
+        state.questionAssetsByQId.clear();
+        await AssetStore.clearAll();
+        renderAll();
+        showToast(`保存されていたローカル画像（${total}件）をクリアしました`, 'info');
+      }
+
+      function getTotalSavedAssetsCount() {
+        let attachedCount = 0;
+        for (const arr of state.questionAssetsByQId.values()) attachedCount += arr.length;
+        return state.fileAssetsByPath.size + attachedCount;
+      }
+
+      function findLocalFileAsset(rawSrc) {
+        const norm = normalizeAssetPath(rawSrc).split(/[?#]/)[0].toLowerCase();
+        if (!norm) return null;
+        if (state.fileAssetsByPath.has(norm)) return state.fileAssetsByPath.get(norm);
+        // Suffix match (e.g. dropped folder 'vrsj-pack/images/q05.png' matches 'images/q05.png')
+        for (const [storedPath, asset] of state.fileAssetsByPath.entries()) {
+          if (storedPath.endsWith('/' + norm) || norm.endsWith('/' + storedPath)) {
+            return asset;
+          }
+        }
+        const base = getBaseName(norm);
+        if (base && state.fileAssetsByName.has(base)) {
+          return state.fileAssetsByName.get(base);
+        }
+        return null;
+      }
+
+      function resolveImageCandidates(rawSrc, baseDir = '') {
+        const src = String(rawSrc || '').trim();
+        if (!src) return [];
+        if (/^(data:|blob:|https?:\/\/)/i.test(src)) {
+          return [src];
+        }
+        const localAsset = findLocalFileAsset(src);
+        if (localAsset && localAsset.dataUrl) {
+          return [localAsset.dataUrl];
+        }
+        const cleanSrc = normalizeAssetPath(src);
+        const candidates = [];
+        if (baseDir) {
+          const cleanBase = normalizeAssetPath(baseDir).replace(/\/?$/, '/');
+          if (!cleanSrc.toLowerCase().startsWith(cleanBase.toLowerCase())) {
+            candidates.push(cleanBase + cleanSrc);
+          }
+        }
+        candidates.push(src);
+        if (cleanSrc !== src) candidates.push(cleanSrc);
+        return Array.from(new Set(candidates));
+      }
+
+      function getAutoMatchedFiguresForQuestion(q, excludedBaseNames) {
+        const qIdLower = String(q.id || '').toLowerCase();
+        if (!qIdLower) return [];
+        const matched = [];
+        const seenKeys = new Set();
+        for (const asset of state.fileAssetsByPath.values()) {
+          const baseName = getBaseName(asset.fileName || asset.relPath);
+          const baseLower = baseName.toLowerCase();
+          if (excludedBaseNames.has(baseLower)) continue;
+          const stem = stripExtension(baseLower);
+          const isMatch =
+            stem === qIdLower ||
+            stem.startsWith(qIdLower + '_') ||
+            stem.startsWith(qIdLower + '-');
+          if (isMatch && !seenKeys.has(asset.key)) {
+            seenKeys.add(asset.key);
+            matched.push({
+              src: asset.dataUrl,
+              fallbacks: [],
+              rawSrc: asset.relPath || baseName,
+              alt: `第${q.number}問の図表（${baseName}）`,
+              caption: baseName,
+              origin: 'auto-file'
+            });
+          }
+        }
+        matched.sort((a, b) => a.caption.localeCompare(b.caption, 'ja', { numeric: true }));
+        return matched;
+      }
+
+      function collectQuestionFigures(q) {
+        const list = [];
+        const matchedBaseNames = new Set();
+        const explicitImages = Array.isArray(q.images) ? q.images : [];
+
+        for (const img of explicitImages) {
+          const rawSrc = img.src || '';
+          const localAsset = findLocalFileAsset(rawSrc);
+          if (localAsset) {
+            matchedBaseNames.add(getBaseName(localAsset.fileName || localAsset.relPath).toLowerCase());
+          } else {
+            const b = getBaseName(rawSrc).toLowerCase();
+            if (b) matchedBaseNames.add(b);
+          }
+          const candidates = resolveImageCandidates(rawSrc, q.examBaseDir || '');
+          if (candidates.length === 0) continue;
+          list.push({
+            src: candidates[0],
+            fallbacks: candidates.slice(1),
+            rawSrc,
+            alt: img.alt || img.caption || `第${q.number}問の図表`,
+            caption: img.caption || '',
+            origin: 'json'
+          });
+        }
+
+        // Auto-match uploaded image files named after question.id (e.g. vrsj-28-app-05.png)
+        const autoMatched = getAutoMatchedFiguresForQuestion(q, matchedBaseNames);
+        list.push(...autoMatched);
+
+        // User-attached / pasted figures for this question
+        const attached = state.questionAssetsByQId.get(q.id) || [];
+        for (const item of attached) {
+          list.push({
+            src: item.dataUrl,
+            fallbacks: [],
+            rawSrc: item.fileName,
+            alt: `第${q.number}問の添付図表（${item.fileName}）`,
+            caption: item.caption || item.fileName,
+            origin: 'attached',
+            assetKey: item.key
+          });
+        }
+
+        return list;
+      }
+
+      /* =====================================================================
          Data Validation & Normalization
          ===================================================================== */
+      function normalizeImageEntries(singleImg, imgArray) {
+        const rawList = [];
+        if (singleImg !== undefined && singleImg !== null && singleImg !== '') {
+          rawList.push(singleImg);
+        }
+        if (Array.isArray(imgArray)) {
+          rawList.push(...imgArray);
+        }
+        const normalized = [];
+        const seenSrc = new Set();
+        for (const entry of rawList) {
+          let src = '';
+          let alt = '';
+          let caption = '';
+          if (typeof entry === 'string') {
+            src = entry.trim();
+          } else if (entry && typeof entry === 'object') {
+            src = String(entry.src ?? entry.url ?? entry.path ?? '').trim();
+            alt = entry.alt ? String(entry.alt).trim() : '';
+            caption = entry.caption ? String(entry.caption).trim() : '';
+          }
+          if (!src || seenSrc.has(src)) continue;
+          seenSrc.add(src);
+          normalized.push({ src, alt, caption });
+        }
+        return normalized;
+      }
+
       function isHistoryJsonShape(obj) {
         return Boolean(
           obj &&
@@ -2400,7 +3169,7 @@
         );
       }
 
-      function normalizeExamData(raw, sourceLabel = 'manual') {
+      function normalizeExamData(raw, sourceLabel = 'manual', baseDir = '') {
         if (!raw || typeof raw !== 'object' || Array.isArray(raw)) {
           throw new Error('問題データのルートはJSONオブジェクトである必要があります。');
         }
@@ -2445,7 +3214,8 @@
             }
             return {
               label,
-              text: c.text === null || c.text === undefined ? '' : String(c.text)
+              text: c.text === null || c.text === undefined ? '' : String(c.text),
+              images: normalizeImageEntries(c.image, c.images)
             };
           });
 
@@ -2454,15 +3224,21 @@
             throw new Error(`問題「${qId}」に正解（answer）が設定されていません。`);
           }
 
+          const qImages = normalizeImageEntries(q.image, q.images);
+          const expImages = normalizeImageEntries(q.explanationImage, q.explanationImages);
+          const hasAnyChoiceImg = choices.some((c) => c.images.length > 0);
+
           return {
             id: qId,
             number: num,
             category: q.category ? String(q.category).trim() : '',
             question: q.question === null || q.question === undefined ? '' : String(q.question),
+            images: qImages,
             choices,
             answer,
             explanation: q.explanation === null || q.explanation === undefined ? '' : String(q.explanation),
-            hasFigure: Boolean(q.hasFigure)
+            explanationImages: expImages,
+            hasFigure: Boolean(q.hasFigure || qImages.length > 0 || hasAnyChoiceImg)
           };
         });
 
@@ -2474,7 +3250,8 @@
           course,
           year,
           questions,
-          _source: sourceLabel
+          _source: sourceLabel,
+          _baseDir: baseDir || (raw._baseDir ? String(raw._baseDir) : '')
         };
       }
 
@@ -2581,21 +3358,109 @@
         });
       }
 
-      async function handleExamFiles(fileList) {
-        const files = Array.from(fileList || []);
-        if (files.length === 0) return;
+      async function readDirectoryEntryRecursive(entry, pathPrefix = '') {
+        if (!entry) return [];
+        if (entry.isFile) {
+          return new Promise((resolve) => {
+            entry.file(
+              (file) => resolve([{ file, relPath: pathPrefix ? `${pathPrefix}/${file.name}` : file.name }]),
+              () => resolve([])
+            );
+          });
+        }
+        if (entry.isDirectory) {
+          const reader = entry.createReader();
+          const allEntries = [];
+          const readBatch = () => new Promise((resolve) => {
+            reader.readEntries(
+              async (entries) => {
+                if (!entries || entries.length === 0) {
+                  resolve();
+                  return;
+                }
+                allEntries.push(...entries);
+                await readBatch();
+                resolve();
+              },
+              () => resolve()
+            );
+          });
+          await readBatch();
+          const nextPrefix = pathPrefix ? `${pathPrefix}/${entry.name}` : entry.name;
+          const nested = [];
+          for (const child of allEntries) {
+            const sub = await readDirectoryEntryRecursive(child, nextPrefix);
+            nested.push(...sub);
+          }
+          return nested;
+        }
+        return [];
+      }
+
+      async function extractFilesFromDropEvent(dataTransfer) {
+        if (!dataTransfer) return [];
+        const items = dataTransfer.items ? Array.from(dataTransfer.items) : [];
+        const hasEntries = items.some((item) => typeof item.webkitGetAsEntry === 'function');
+        if (hasEntries) {
+          const collected = [];
+          for (const item of items) {
+            if (item.kind !== 'file') continue;
+            const entry = item.webkitGetAsEntry();
+            if (entry) {
+              const files = await readDirectoryEntryRecursive(entry, '');
+              collected.push(...files);
+            } else {
+              const f = item.getAsFile();
+              if (f) collected.push({ file: f, relPath: f.name });
+            }
+          }
+          if (collected.length > 0) return collected;
+        }
+        return Array.from(dataTransfer.files || []).map((file) => ({
+          file,
+          relPath: file.webkitRelativePath || file.name
+        }));
+      }
+
+      async function handleIncomingFiles(fileListOrEntries) {
+        const rawList = Array.from(fileListOrEntries || []);
+        if (rawList.length === 0) return;
+
+        const entries = rawList.map((item) => {
+          if (item && item.file) return item;
+          return { file: item, relPath: item.webkitRelativePath || item.name };
+        });
+
+        // Process images first so newly loaded exam JSONs immediately resolve them
+        const imageEntries = entries.filter((e) => isImageFile(e.file));
+        const jsonEntries = entries.filter((e) => isJsonFile(e.file));
 
         const hadNoExams = state.examsById.size === 0;
+        let imagesLoaded = 0;
         let addedCount = 0;
         let updatedCount = 0;
         let totalQuestionsLoaded = 0;
         const errors = [];
         let historyCandidate = null;
 
-        for (const file of files) {
+        for (const { file, relPath } of imageEntries) {
+          try {
+            await saveFileAsset(file, relPath);
+            imagesLoaded++;
+          } catch (err) {
+            errors.push(`${file.name}: ${err.message || '画像の読み込みに失敗しました'}`);
+          }
+        }
+
+        for (const { file } of jsonEntries) {
           try {
             const text = await file.text();
             const parsed = JSON.parse(text);
+
+            // Skip manifest.json silently when dropping an entire project folder
+            if (file.name.toLowerCase() === 'manifest.json' && Array.isArray(parsed) && parsed.every((x) => typeof x === 'string')) {
+              continue;
+            }
 
             // Detect if user dropped a learning history JSON by mistake
             if (isHistoryJsonShape(parsed)) {
@@ -2616,7 +3481,8 @@
           }
         }
 
-        if (addedCount > 0 || updatedCount > 0) {
+        const examChanged = addedCount > 0 || updatedCount > 0;
+        if (examChanged) {
           saveExamsCacheToStorage();
           savePrefsToStorage();
           rebuildQueue({ resetIndex: hadNoExams || state.queue.length === 0 });
@@ -2625,10 +3491,20 @@
           } else {
             renderAll();
           }
-          const parts = [];
-          if (addedCount > 0) parts.push(`${addedCount}件追加`);
-          if (updatedCount > 0) parts.push(`${updatedCount}件更新`);
-          showToast(`試験データを読み込みました（${parts.join('・')} / 計${totalQuestionsLoaded}問）`, 'success');
+        } else if (imagesLoaded > 0) {
+          renderAll();
+        }
+
+        const summaryParts = [];
+        if (addedCount > 0) summaryParts.push(`試験${addedCount}件追加`);
+        if (updatedCount > 0) summaryParts.push(`試験${updatedCount}件更新`);
+        if (examChanged) summaryParts.push(`計${totalQuestionsLoaded}問`);
+        if (imagesLoaded > 0) summaryParts.push(`図表画像${imagesLoaded}枚`);
+
+        if (summaryParts.length > 0) {
+          showToast(`読み込み完了：${summaryParts.join(' / ')}`, 'success');
+        } else if (!historyCandidate && errors.length === 0) {
+          showToast('対応するJSONまたは画像ファイルが見つかりませんでした', 'info');
         }
 
         if (historyCandidate) {
@@ -2638,6 +3514,107 @@
         if (errors.length > 0) {
           showToast(`読み込みエラー: ${errors[0]}${errors.length > 1 ? ` 他${errors.length - 1}件` : ''}`, 'error', 5500);
         }
+      }
+
+      async function attachImagesToCurrentQuestion(fileList) {
+        const q = state.queue[state.currentIndex];
+        if (!q || state.sessionCompleted) {
+          showToast('演習中の問題を表示してから図を添付してください', 'info');
+          return;
+        }
+        const files = Array.from(fileList || []).filter((f) => isImageFile(f));
+        if (files.length === 0) {
+          showToast('画像ファイル（PNG/JPG/WebP/SVG等）を選択してください', 'error');
+          return;
+        }
+        let attached = 0;
+        for (const f of files) {
+          try {
+            await saveQuestionAttachment(q.id, f);
+            attached++;
+          } catch (err) {
+            showToast(`画像添付に失敗しました: ${f.name}`, 'error');
+          }
+        }
+        if (attached > 0) {
+          renderQuizView();
+          renderDataView();
+          showToast(`第${q.number}問に図表画像（${attached}枚）を添付しました`, 'success');
+        }
+      }
+
+      function exportExamJsonWithImages(examId) {
+        const exam = state.examsById.get(examId);
+        if (!exam) return;
+
+        const exportedQuestions = exam.questions.map((q) => {
+          const enriched = { ...q, examBaseDir: exam._baseDir || '' };
+          const figs = collectQuestionFigures(enriched);
+          const embeddedImages = figs.map((f) => {
+            const out = { src: f.src };
+            if (f.alt) out.alt = f.alt;
+            if (f.caption) out.caption = f.caption;
+            return out;
+          });
+
+          const exportedChoices = q.choices.map((c) => {
+            const outChoice = { label: c.label, text: c.text };
+            if (Array.isArray(c.images) && c.images.length > 0) {
+              outChoice.images = c.images.map((ci) => {
+                const cands = resolveImageCandidates(ci.src, exam._baseDir || '');
+                const o = { src: cands[0] || ci.src };
+                if (ci.alt) o.alt = ci.alt;
+                if (ci.caption) o.caption = ci.caption;
+                return o;
+              });
+            }
+            return outChoice;
+          });
+
+          const qOut = {
+            id: q.id,
+            number: q.number,
+            category: q.category,
+            question: q.question,
+            choices: exportedChoices,
+            answer: q.answer,
+            explanation: q.explanation,
+            hasFigure: Boolean(q.hasFigure || embeddedImages.length > 0)
+          };
+          if (embeddedImages.length > 0) {
+            qOut.images = embeddedImages;
+          }
+          if (Array.isArray(q.explanationImages) && q.explanationImages.length > 0) {
+            qOut.explanationImages = q.explanationImages.map((ei) => {
+              const cands = resolveImageCandidates(ei.src, exam._baseDir || '');
+              const o = { src: cands[0] || ei.src };
+              if (ei.alt) o.alt = ei.alt;
+              if (ei.caption) o.caption = ei.caption;
+              return o;
+            });
+          }
+          return qOut;
+        });
+
+        const payload = {
+          examId: exam.examId,
+          title: exam.title,
+          course: exam.course,
+          year: exam.year,
+          questions: exportedQuestions
+        };
+
+        const blob = new Blob([JSON.stringify(payload, null, 2)], { type: 'application/json;charset=utf-8' });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        const safeName = exam.examId.replace(/[^a-zA-Z0-9_-]/g, '_');
+        a.href = url;
+        a.download = `${safeName}.json`;
+        document.body.appendChild(a);
+        a.click();
+        a.remove();
+        setTimeout(() => URL.revokeObjectURL(url), 1000);
+        showToast(`図入り問題JSONを保存しました（${safeName}.json）`, 'success');
       }
 
       function loadDemoExam() {
@@ -2652,8 +3629,8 @@
         switchTab('quiz');
         showToast(
           res === 'updated'
-            ? 'デモ問題（通常1問＋マークシート1問）を再読み込みしました'
-            : 'デモ問題（通常1問＋マークシート1問）を読み込みました',
+            ? 'デモ問題（通常1問＋図付きマークシート1問）を再読み込みしました'
+            : 'デモ問題（通常1問＋図付きマークシート1問）を読み込みました',
           'success'
         );
         if (hadNoExams) {
@@ -2703,9 +3680,12 @@
               const res = await fetch(rawPath, { cache: 'no-store' });
               if (!res.ok) throw new Error(`HTTP ${res.status}`);
               const data = await res.json();
+              const cleanPath = normalizeAssetPath(rawPath);
+              const lastSlash = cleanPath.lastIndexOf('/');
+              const baseDir = lastSlash >= 0 ? cleanPath.slice(0, lastSlash + 1) : '';
               const items = Array.isArray(data) ? data : [data];
               for (const item of items) {
-                const normalized = normalizeExamData(item, 'manifest');
+                const normalized = normalizeExamData(item, 'manifest', baseDir);
                 registerExam(normalized, { autoSelect: true });
                 loadedCount++;
               }
@@ -2769,7 +3749,8 @@
               examId: exam.examId,
               examTitle: exam.title,
               examCourse: exam.course,
-              examYear: exam.year
+              examYear: exam.year,
+              examBaseDir: exam._baseDir || ''
             });
           }
         }
@@ -3230,25 +4211,74 @@
           <span class="q-exam-title" style="width:100%; margin-top:2px;">${escapeHtml(q.examTitle)}</span>
         `;
 
-        // Figure Banner
-        dom.figureBanner.classList.toggle('hidden', !q.hasFigure);
+        // Collect figures for this question (JSON + auto-matched ID files + user attachments)
+        const questionFigures = collectQuestionFigures(q);
+        state.activeLightboxGroup = questionFigures.map((f) => ({
+          src: f.src,
+          alt: f.alt,
+          caption: f.caption || f.alt
+        }));
+
+        // Figure Banner (shown when hasFigure is true AND no figure image is loaded yet)
+        dom.figureBanner.classList.toggle('hidden', !(q.hasFigure && questionFigures.length === 0));
 
         // Prompt Area (Standard vs Mark-Sheet Mode)
         const isMarkSheetPrompt = q.question.trim() === '';
         if (isMarkSheetPrompt) {
+          const markSubText = questionFigures.length > 0
+            ? '下の図表（タップで拡大）または元PDFを確認し、解答記号をタップしてください。'
+            : '問題PDFで設問を確認し、下の解答記号をタップすると即座に採点・履歴保存されます。';
           dom.questionPromptArea.innerHTML = `
             <div class="marksheet-box">
               <div class="marksheet-tag">マークシート／PDF併読モード</div>
-              <h2 class="marksheet-heading">元PDFを参照して回答してください（第${escapeHtml(q.number)}問）</h2>
-              <p class="marksheet-sub">問題PDFで設問を確認し、下の解答記号をタップすると即座に採点・履歴保存されます。</p>
+              <h2 class="marksheet-heading">元PDF${questionFigures.length > 0 ? '・図表' : ''}を参照して回答してください（第${escapeHtml(q.number)}問）</h2>
+              <p class="marksheet-sub">${markSubText}</p>
             </div>
           `;
         } else {
           dom.questionPromptArea.innerHTML = `<p class="q-text">${escapeHtml(q.question)}</p>`;
         }
 
-        // Choices Area (Tile Grid if all choice texts are empty, otherwise Standard List)
-        const allChoiceTextEmpty = q.choices.every((c) => c.text.trim() === '');
+        // Question Figures Area
+        if (questionFigures.length > 0) {
+          dom.questionFiguresArea.classList.remove('hidden');
+          const gridClass = questionFigures.length > 1 ? 'figure-grid is-multi' : 'figure-grid';
+          dom.questionFiguresArea.innerHTML = `<div class="${gridClass}">${questionFigures.map((fig, idx) => {
+            const captionText = fig.caption || (fig.origin === 'attached' ? `添付画像: ${fig.rawSrc}` : '');
+            const removeBtnHtml = fig.origin === 'attached' && fig.assetKey
+              ? `<button type="button" class="btn btn-sm btn-danger" data-remove-attachment="${escapeHtml(fig.assetKey)}" data-question-id="${escapeHtml(q.id)}">削除</button>`
+              : '';
+            const fallbacksJson = escapeHtml(JSON.stringify(fig.fallbacks || []));
+            return `
+              <figure class="figure-card">
+                <div class="figure-frame" data-lightbox-index="${idx}" title="クリック／タップで拡大表示">
+                  <img
+                    src="${escapeHtml(fig.src)}"
+                    alt="${escapeHtml(fig.alt)}"
+                    decoding="async"
+                    data-figure-img="true"
+                    data-raw-src="${escapeHtml(fig.rawSrc)}"
+                    data-fallbacks="${fallbacksJson}"
+                  >
+                  <span class="figure-zoom-badge">🔍 拡大</span>
+                </div>
+                ${(captionText || removeBtnHtml) ? `
+                  <figcaption class="figure-caption-bar">
+                    <span class="figure-caption-text">${escapeHtml(captionText || `図${idx + 1}`)}</span>
+                    ${removeBtnHtml}
+                  </figcaption>
+                ` : ''}
+              </figure>
+            `;
+          }).join('')}</div>`;
+        } else {
+          dom.questionFiguresArea.classList.add('hidden');
+          dom.questionFiguresArea.innerHTML = '';
+        }
+
+        // Choices Area (Tile Grid if all choice texts & images are empty, otherwise Standard List)
+        const anyChoiceHasImage = q.choices.some((c) => Array.isArray(c.images) && c.images.length > 0);
+        const allChoiceTextEmpty = !anyChoiceHasImage && q.choices.every((c) => c.text.trim() === '');
         const containerClass = allChoiceTextEmpty ? 'choices-grid' : 'choices-list';
         const choicesHtml = q.choices.map((c) => {
           const isCorrectChoice = String(c.label).trim() === String(q.answer).trim();
@@ -3268,13 +4298,50 @@
             }
           }
 
+          let choiceImagesHtml = '';
+          if (Array.isArray(c.images) && c.images.length > 0) {
+            const thumbs = c.images.map((ci) => {
+              const cands = resolveImageCandidates(ci.src, q.examBaseDir || '');
+              if (cands.length === 0) return '';
+              const alt = ci.alt || ci.caption || `選択肢${c.label}の図`;
+              return `
+                <span class="choice-thumb-wrap">
+                  <img
+                    src="${escapeHtml(cands[0])}"
+                    alt="${escapeHtml(alt)}"
+                    decoding="async"
+                    data-figure-img="true"
+                    data-raw-src="${escapeHtml(ci.src)}"
+                    data-fallbacks="${escapeHtml(JSON.stringify(cands.slice(1)))}"
+                  >
+                  <span
+                    role="button"
+                    tabindex="0"
+                    class="choice-zoom-trigger"
+                    data-zoom-single-src="${escapeHtml(cands[0])}"
+                    data-zoom-single-caption="${escapeHtml(ci.caption || alt)}"
+                    title="図を拡大（解答は送信されません）"
+                  >🔍 拡大</span>
+                </span>
+              `;
+            }).join('');
+            if (thumbs) {
+              choiceImagesHtml = `<span class="choice-images-wrap">${thumbs}</span>`;
+            }
+          }
+
           return `
             <button type="button"
               class="choice-btn ${stateClass}"
               data-choice-label="${escapeHtml(c.label)}"
               ${sessionAns ? 'disabled' : ''}>
               <span class="choice-label">${escapeHtml(c.label)}</span>
-              ${allChoiceTextEmpty ? '' : `<span class="choice-text">${escapeHtml(c.text)}</span>`}
+              ${allChoiceTextEmpty ? '' : `
+                <span class="choice-content">
+                  ${c.text.trim() ? `<span class="choice-text">${escapeHtml(c.text)}</span>` : ''}
+                  ${choiceImagesHtml}
+                </span>
+              `}
               ${statusTag}
             </button>
           `;
@@ -3288,6 +4355,35 @@
           const explanationText = q.explanation.trim()
             ? q.explanation
             : 'この問題には解説が登録されていません。';
+
+          let expFiguresHtml = '';
+          if (Array.isArray(q.explanationImages) && q.explanationImages.length > 0) {
+            const expCards = q.explanationImages.map((ei, idx) => {
+              const cands = resolveImageCandidates(ei.src, q.examBaseDir || '');
+              if (cands.length === 0) return '';
+              const alt = ei.alt || ei.caption || `解説図${idx + 1}`;
+              return `
+                <figure class="figure-card">
+                  <div class="figure-frame" data-zoom-single-src="${escapeHtml(cands[0])}" data-zoom-single-caption="${escapeHtml(ei.caption || alt)}" title="クリック／タップで拡大表示">
+                    <img
+                      src="${escapeHtml(cands[0])}"
+                      alt="${escapeHtml(alt)}"
+                      decoding="async"
+                      data-figure-img="true"
+                      data-raw-src="${escapeHtml(ei.src)}"
+                      data-fallbacks="${escapeHtml(JSON.stringify(cands.slice(1)))}"
+                    >
+                    <span class="figure-zoom-badge">🔍 拡大</span>
+                  </div>
+                  ${ei.caption ? `<figcaption class="figure-caption-bar"><span class="figure-caption-text">${escapeHtml(ei.caption)}</span></figcaption>` : ''}
+                </figure>
+              `;
+            }).join('');
+            if (expCards) {
+              expFiguresHtml = `<div class="explanation-figures"><div class="figure-grid">${expCards}</div></div>`;
+            }
+          }
+
           dom.resultArea.classList.remove('hidden');
           dom.resultArea.innerHTML = `
             <div class="result-box ${isOk ? 'is-correct' : 'is-wrong'}">
@@ -3298,6 +4394,7 @@
               <div class="result-body">
                 <div class="explanation-label">解説</div>
                 <p class="explanation-text">${escapeHtml(explanationText)}</p>
+                ${expFiguresHtml}
                 <div class="result-footer">
                   <button type="button" class="btn btn-sm" id="retryOneBtn">この問題をもう一度解き直す</button>
                 </div>
@@ -3436,6 +4533,13 @@
           dom.loadedExamsList.innerHTML = exams.map((exam) => {
             const courseMeta = getCourseMeta(exam.course);
             const markSheetCount = exam.questions.filter((q) => q.question.trim() === '').length;
+            const figureCount = exam.questions.filter((q) => {
+              const figs = collectQuestionFigures({ ...q, examBaseDir: exam._baseDir || '' });
+              return q.hasFigure || figs.length > 0;
+            }).length;
+            const detailTags = [];
+            if (markSheetCount > 0) detailTags.push(`マークシート${markSheetCount}問`);
+            if (figureCount > 0) detailTags.push(`図あり${figureCount}問`);
             return `
               <div class="loaded-exam-item">
                 <div class="loaded-exam-info">
@@ -3443,15 +4547,24 @@
                   <div class="loaded-exam-sub">
                     <span class="badge ${courseMeta.className}">${escapeHtml(courseMeta.label)}</span>
                     <span>ID: ${escapeHtml(exam.examId)}</span>
-                    <span>全${exam.questions.length}問${markSheetCount > 0 ? `（マークシート${markSheetCount}問）` : ''}</span>
+                    <span>全${exam.questions.length}問${detailTags.length > 0 ? `（${detailTags.join('・')}）` : ''}</span>
                     <span class="badge badge-neutral">${escapeHtml(sourceLabels[exam._source] || '読込済')}</span>
                   </div>
                 </div>
-                <button type="button" class="btn btn-sm" data-remove-exam="${escapeHtml(exam.examId)}">一覧から外す</button>
+                <div class="btn-row" style="gap:6px;">
+                  <button type="button" class="btn btn-sm" data-export-exam="${escapeHtml(exam.examId)}" title="紐付け・添付した図表を埋め込んだJSONとして保存">図入りJSON保存</button>
+                  <button type="button" class="btn btn-sm" data-remove-exam="${escapeHtml(exam.examId)}">一覧から外す</button>
+                </div>
               </div>
             `;
           }).join('');
         }
+
+        const fileAssetCount = state.fileAssetsByPath.size;
+        let attachedAssetCount = 0;
+        for (const arr of state.questionAssetsByQId.values()) attachedAssetCount += arr.length;
+        dom.assetsSummaryText.textContent = `読込済み画像ファイル: ${fileAssetCount}枚 ／ 問題への直接添付: ${attachedAssetCount}枚`;
+        dom.clearAssetsBtn.disabled = (fileAssetCount + attachedAssetCount) === 0;
 
         renderHistorySummary();
       }
@@ -3541,6 +4654,39 @@
         el.classList.add('hidden');
       }
 
+      /* Lightbox Image Viewer */
+      function openLightbox(items, startIndex = 0) {
+        if (!Array.isArray(items) || items.length === 0) return;
+        state.lightbox.items = items;
+        state.lightbox.index = Math.max(0, Math.min(items.length - 1, startIndex));
+        state.lightbox.zoomed = false;
+        renderLightbox();
+        dom.imageLightboxModal.classList.remove('hidden');
+      }
+
+      function closeLightbox() {
+        dom.imageLightboxModal.classList.add('hidden');
+        state.lightbox.zoomed = false;
+      }
+
+      function renderLightbox() {
+        const { items, index, zoomed, darkBg } = state.lightbox;
+        const item = items[index];
+        if (!item) return;
+        const countLabel = items.length > 1 ? ` (${index + 1} / ${items.length})` : '';
+        dom.lightboxCaption.textContent = (item.caption || item.alt || '図表プレビュー') + countLabel;
+        dom.lightboxImg.src = item.src;
+        dom.lightboxImg.alt = item.alt || item.caption || '拡大図表';
+        dom.lightboxImg.classList.toggle('is-zoomed', zoomed);
+        dom.lightboxZoomBtn.textContent = zoomed ? '画面に合わせる' : '拡大 200%';
+        dom.lightboxStage.classList.toggle('is-dark-bg', darkBg);
+        dom.lightboxBgBtn.textContent = darkBg ? '背景: 暗' : '背景: 白';
+        dom.lightboxPrevBtn.classList.toggle('hidden', items.length <= 1);
+        dom.lightboxNextBtn.classList.toggle('hidden', items.length <= 1);
+        dom.lightboxPrevBtn.disabled = index <= 0;
+        dom.lightboxNextBtn.disabled = index >= items.length - 1;
+      }
+
       function applyTheme(theme) {
         state.theme = theme === 'dark' ? 'dark' : 'light';
         document.documentElement.setAttribute('data-theme', state.theme);
@@ -3565,12 +4711,58 @@
 
         // Global delegated clicks for dynamic actions
         document.addEventListener('click', (e) => {
+          // 1. Check choice/explanation single-image zoom FIRST so clicking zoom inside a choice does NOT submit the answer
+          const zoomSingleEl = e.target.closest('[data-zoom-single-src]');
+          if (zoomSingleEl) {
+            e.preventDefault();
+            e.stopPropagation();
+            const imgEl = zoomSingleEl.closest('.choice-thumb-wrap, .figure-frame')?.querySelector('img');
+            const src = (imgEl && imgEl.currentSrc) || zoomSingleEl.dataset.zoomSingleSrc;
+            const caption = zoomSingleEl.dataset.zoomSingleCaption || '図表プレビュー';
+            openLightbox([{ src, alt: caption, caption }], 0);
+            return;
+          }
+
+          // 2. Check question-level figure frame Lightbox open
+          const lightboxFrameEl = e.target.closest('[data-lightbox-index]');
+          if (lightboxFrameEl) {
+            const idx = Number(lightboxFrameEl.dataset.lightboxIndex);
+            // Only open if image loaded cleanly (not missing-box)
+            if (lightboxFrameEl.querySelector('img')) {
+              openLightbox(state.activeLightboxGroup, idx);
+            }
+            return;
+          }
+
+          // 3. Remove user-attached image from question
+          const removeAttachEl = e.target.closest('[data-remove-attachment]');
+          if (removeAttachEl) {
+            removeQuestionAttachment(removeAttachEl.dataset.questionId, removeAttachEl.dataset.removeAttachment);
+            return;
+          }
+
+          // 4. Export exam JSON with embedded figures
+          const exportExamEl = e.target.closest('[data-export-exam]');
+          if (exportExamEl) {
+            exportExamJsonWithImages(exportExamEl.dataset.exportExam);
+            return;
+          }
+
           const actionEl = e.target.closest('[data-action]');
           if (actionEl) {
             const action = actionEl.dataset.action;
             if (action === 'pick-exam-files') {
               dom.examFileInput.value = '';
               dom.examFileInput.click();
+            } else if (action === 'pick-folder') {
+              dom.folderFileInput.value = '';
+              dom.folderFileInput.click();
+            } else if (action === 'pick-image-assets') {
+              dom.imageAssetsInput.value = '';
+              dom.imageAssetsInput.click();
+            } else if (action === 'attach-question-image') {
+              dom.singleQuestionImageInput.value = '';
+              dom.singleQuestionImageInput.click();
             } else if (action === 'load-demo') {
               loadDemoExam();
             }
@@ -3760,7 +4952,16 @@
 
         // File Inputs
         dom.examFileInput.addEventListener('change', (e) => {
-          handleExamFiles(e.target.files);
+          handleIncomingFiles(e.target.files);
+        });
+        dom.folderFileInput.addEventListener('change', (e) => {
+          handleIncomingFiles(e.target.files);
+        });
+        dom.imageAssetsInput.addEventListener('change', (e) => {
+          handleIncomingFiles(e.target.files);
+        });
+        dom.singleQuestionImageInput.addEventListener('change', (e) => {
+          attachImagesToCurrentQuestion(e.target.files);
         });
         dom.historyFileInput.addEventListener('change', (e) => {
           const file = e.target.files && e.target.files[0];
@@ -3771,6 +4972,7 @@
         dom.reloadManifestBtn.addEventListener('click', () => {
           tryLoadManifest({ userTriggered: true });
         });
+        dom.clearAssetsBtn.addEventListener('click', clearAllSavedAssets);
         dom.exportHistoryBtn.addEventListener('click', exportHistoryJson);
         dom.importHistoryBtn.addEventListener('click', () => {
           dom.historyFileInput.value = '';
@@ -3782,7 +4984,95 @@
         dom.confirmImportOverwriteBtn.addEventListener('click', () => applyHistoryImport('overwrite'));
         dom.confirmResetBtn.addEventListener('click', confirmResetHistory);
 
-        // Global & Local Drag & Drop
+        // Lightbox Controls
+        dom.lightboxCloseBtn.addEventListener('click', closeLightbox);
+        dom.lightboxPrevBtn.addEventListener('click', () => {
+          if (state.lightbox.index > 0) {
+            state.lightbox.index--;
+            state.lightbox.zoomed = false;
+            renderLightbox();
+          }
+        });
+        dom.lightboxNextBtn.addEventListener('click', () => {
+          if (state.lightbox.index + 1 < state.lightbox.items.length) {
+            state.lightbox.index++;
+            state.lightbox.zoomed = false;
+            renderLightbox();
+          }
+        });
+        dom.lightboxZoomBtn.addEventListener('click', () => {
+          state.lightbox.zoomed = !state.lightbox.zoomed;
+          renderLightbox();
+        });
+        dom.lightboxImg.addEventListener('click', () => {
+          state.lightbox.zoomed = !state.lightbox.zoomed;
+          renderLightbox();
+        });
+        dom.lightboxBgBtn.addEventListener('click', () => {
+          state.lightbox.darkBg = !state.lightbox.darkBg;
+          renderLightbox();
+        });
+        dom.imageLightboxModal.addEventListener('click', (e) => {
+          if (e.target === dom.imageLightboxModal) closeLightbox();
+        });
+
+        // Graceful Image Load Fallback & Missing Image Recovery (capture phase)
+        document.addEventListener('error', (e) => {
+          const img = e.target;
+          if (!img || img.tagName !== 'IMG' || img.dataset.figureImg !== 'true') return;
+          let fallbacks = [];
+          try {
+            fallbacks = JSON.parse(img.dataset.fallbacks || '[]');
+          } catch (err) {
+            fallbacks = [];
+          }
+          if (fallbacks.length > 0) {
+            const nextSrc = fallbacks.shift();
+            img.dataset.fallbacks = JSON.stringify(fallbacks);
+            img.src = nextSrc;
+            return;
+          }
+          const rawSrc = img.dataset.rawSrc || '';
+          const frame = img.closest('.figure-frame');
+          if (frame) {
+            frame.removeAttribute('data-lightbox-index');
+            frame.style.cursor = 'default';
+            frame.innerHTML = `
+              <div class="figure-missing-box">
+                <p>図表画像が見つかりません：${escapeHtml(rawSrc)}</p>
+                <div class="btn-row" style="justify-content:center;">
+                  <button type="button" class="btn btn-sm" data-action="pick-image-assets">画像ファイルを選択</button>
+                  <button type="button" class="btn btn-sm" data-action="attach-question-image">この問題へ直接添付</button>
+                </div>
+              </div>
+            `;
+          } else {
+            const thumbWrap = img.closest('.choice-thumb-wrap');
+            if (thumbWrap) {
+              thumbWrap.innerHTML = `<span style="font-size:0.76rem; color:var(--warning); padding:4px 8px;">画像未読込: ${escapeHtml(getBaseName(rawSrc) || rawSrc)}</span>`;
+            }
+          }
+        }, true);
+
+        // Clipboard Paste (Ctrl+V) to attach screenshot directly to active question
+        window.addEventListener('paste', async (e) => {
+          if (state.activeTab !== 'quiz' || state.examsById.size === 0 || state.queue.length === 0 || state.sessionCompleted) return;
+          if (['INPUT', 'TEXTAREA'].includes(document.activeElement?.tagName)) return;
+          const items = e.clipboardData && e.clipboardData.items ? Array.from(e.clipboardData.items) : [];
+          const imageFiles = [];
+          for (const item of items) {
+            if (item.kind === 'file' && item.type && item.type.startsWith('image/')) {
+              const f = item.getAsFile();
+              if (f) imageFiles.push(f);
+            }
+          }
+          if (imageFiles.length > 0) {
+            e.preventDefault();
+            await attachImagesToCurrentQuestion(imageFiles);
+          }
+        });
+
+        // Global & Local Drag & Drop (JSON + Images + Folders)
         let dragDepth = 0;
         const hasFiles = (e) => e.dataTransfer && Array.from(e.dataTransfer.types || []).includes('Files');
 
@@ -3812,20 +5102,37 @@
           }
         });
 
-        window.addEventListener('drop', (e) => {
+        window.addEventListener('drop', async (e) => {
           if (!hasFiles(e)) return;
           e.preventDefault();
           dragDepth = 0;
           dom.globalDropOverlay.classList.add('hidden');
           dom.onboardingDropzone.classList.remove('drag-active');
           dom.dataDropzone.classList.remove('drag-active');
-          if (e.dataTransfer && e.dataTransfer.files && e.dataTransfer.files.length > 0) {
-            handleExamFiles(e.dataTransfer.files);
+          const extracted = await extractFilesFromDropEvent(e.dataTransfer);
+          if (extracted.length > 0) {
+            await handleIncomingFiles(extracted);
           }
         });
 
         // Keyboard Shortcuts (Desktop convenience)
         document.addEventListener('keydown', (e) => {
+          // Lightbox keyboard controls
+          if (!dom.imageLightboxModal.classList.contains('hidden')) {
+            if (e.key === 'Escape') {
+              closeLightbox();
+            } else if (e.key === 'ArrowLeft' && state.lightbox.index > 0) {
+              state.lightbox.index--;
+              state.lightbox.zoomed = false;
+              renderLightbox();
+            } else if (e.key === 'ArrowRight' && state.lightbox.index + 1 < state.lightbox.items.length) {
+              state.lightbox.index++;
+              state.lightbox.zoomed = false;
+              renderLightbox();
+            }
+            return;
+          }
+
           // Ignore when modal is open or user is typing in form elements
           const modalOpen = !dom.navigatorModal.classList.contains('hidden') ||
             !dom.importModal.classList.contains('hidden') ||
@@ -3881,11 +5188,17 @@
         // 2. Load saved learning history
         state.history = loadHistoryFromStorage();
 
-        // 3. Restore previously cached manually-loaded exams (helpful for file:// study)
+        // 3. Load saved local image assets from IndexedDB
+        const savedAssets = await AssetStore.loadAll();
+        for (const rec of savedAssets) {
+          indexAssetInMemory(rec);
+        }
+
+        // 4. Restore previously cached manually-loaded exams (helpful for file:// study)
         const cachedExams = loadExamsCacheFromStorage();
         for (const item of cachedExams) {
           try {
-            const normalized = normalizeExamData(item, item._source || 'manual');
+            const normalized = normalizeExamData(item, item._source || 'manual', item._baseDir || '');
             registerExam(normalized, { autoSelect: true });
           } catch (err) {
             // Skip invalid cache entries
@@ -3904,7 +5217,7 @@
         updateTimerDisplay();
         rebuildQueue({ resetIndex: true });
 
-        // 4. Attempt automatic loading via manifest.json (succeeds on HTTP/GitHub Pages; fails gracefully on file://)
+        // 5. Attempt automatic loading via manifest.json (succeeds on HTTP/GitHub Pages; fails gracefully on file://)
         await tryLoadManifest({ userTriggered: false });
       }
 
