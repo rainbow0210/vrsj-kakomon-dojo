@@ -7,3 +7,6 @@ desktop.ini
 *~
 .vscode/
 .idea/
+
+# Source exam PDFs (kept local only)
+pdfs/
